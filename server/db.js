@@ -1,13 +1,26 @@
 const mysql = require('mysql');
+const config = require('./config.json');
 
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'password',
-    database: 'world'  //replace this with connection to your own DB
+    host: config.host,
+    user: config.user,
+    password: config.password,
+    database: 'KainosMAP'
 });
 
-db.connect(function(err) {
+db.connect(function (err) {
     if(err) throw err;
-    console.log("Connected to MySQL");
+    console.log("Connection to mysql Successful");
 });
+
+exports.insertCourseEmployee = function(courseID, employeeID, callback){
+    db.query(
+        "INSERT INTO courseEmployee(courseID, employeeID)" +
+        "VALUES ?,? "
+        [courseID, employeeID],
+        function(err){
+            if(err) throw err;
+            callback("Employee Book Course Successful.");
+        }
+    );
+};
