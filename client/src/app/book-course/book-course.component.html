@@ -1,0 +1,4 @@
+<input placeholder="Enter First Name"  [(ngModel)]="employee.firstName" (ngModelChange)="employee.lastName=$event"><br/>
+<input placeholder="Enter Last Name" [(ngModel)]="employee.lastName" (ngModelChange)="employee.lastName=$event"><br/>
+<input placeholder="Enter Email Address"  [(ngModel)]="employee.email" (ngModelChange)="employee.email=$event"><br/>
+<button (click)=onSave(employee)>Book Now</button>
