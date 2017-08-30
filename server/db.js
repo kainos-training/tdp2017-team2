@@ -17,7 +17,7 @@ db.connect(function (err) {
 
 exports.getAllCourses = function (callback){
     db.query(
-        "SELECT * FROM Course ORDER BY dateOfCourse, title ASC",
+        "select title, CAST(dateOfCourse AS DATE) as dateOfCourse, location from Course order by dateOfCourse, title ASC",
         [],
         function (err, rows) {
             if(err) { console.log("Error with query"); throw err; } 
