@@ -15,6 +15,16 @@ db.connect(function (err) {
     console.log("Connection to mysql Successful");
 });
 
+exports.getAllCourses = function (callback){
+    db.query(
+        "SELECT * FROM Course ORDER BY dateOfCourse, title ASC",
+        [],
+        function (err, rows) {
+            if(err) { console.log("Error with query"); throw err; } 
+            callback (rows);
+        });
+};
+
 exports.insertCourseEmployee = function(courseID, employeeID, callback){
     db.query(
         "INSERT INTO courseEmployee(courseID, employeeID)" +

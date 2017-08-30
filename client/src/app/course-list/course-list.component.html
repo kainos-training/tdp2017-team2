@@ -1,7 +1,21 @@
-<h1>Course List</h1>
-<ul style="list-style: none;">
-  <li>Option 1</li>
-  <li>Option 2</li>
-  <li>Option 3</li>
-  <li>Option 4</li>
-</ul>
+
+<div class="container">
+    <p class="text-right">SEPTEMBER 2017</p>
+  </div>
+  
+    <div class="container">
+    <table class="table table-hover">
+    <table class="table">
+        <thead>
+       </thead>
+        <tbody>
+            <tr *ngFor="let course of courses|async">
+                <td>{{course.title}}</td>
+                 <td>{{course.location}}</td>
+                 <td>{{course.dateOfCourse}}</td>
+               <td><button type="button" class="btn btn-outline-primary">Book a Place</button></td>
+               </tr>
+        </tbody>
+      </table>
+    </table>
+  </div>
