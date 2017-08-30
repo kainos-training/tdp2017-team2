@@ -1,5 +1,8 @@
 
 <div class="container">
+    <h3 class="text-left">COURSES AVAILABLE</h3>
+</div>
+<div class="container">
     <p class="text-right">SEPTEMBER 2017</p>
   </div>
   
@@ -12,7 +15,7 @@
             <tr *ngFor="let course of courses|async">
                 <td>{{course.title}}</td>
                  <td>{{course.location}}</td>
-                 <td>{{course.dateOfCourse}}</td>
+                 <td>{{course.dateOfCourse|date: "dd/MM/yyyy"}}</td>
                <td><button type="button" class="btn btn-outline-primary">Book a Place</button></td>
                </tr>
         </tbody>

@@ -1,0 +1,9 @@
+.table td{
+    text-align: left;
+}
+
+h3{
+    padding-top: 40px;
+    font-style: bold;
+    color: grey;
+}
