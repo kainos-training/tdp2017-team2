@@ -12,12 +12,19 @@ import { DataService } from '../data.service';
 })
 export class CourseListComponent implements OnInit {
 
+  showInfo: boolean;
+
   courses: Course[];
   data: DataService;
   constructor(dataService: DataService) { 
     this.data = dataService;
     this.data.getCourseList();
     this.courses = this.data.courses;
+    this.showInfo = false;
+  }
+
+  change() {
+    this.showInfo = true;
   }
   
   ngOnInit() {
