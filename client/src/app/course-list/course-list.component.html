@@ -6,7 +6,7 @@
     <p class="text-right">SEPTEMBER 2017</p>
   </div>
   
-    <div class="container">
+    <div class="container" *ngIf="!showInfo">
     <table class="table table-hover">
     <table class="table">
         <thead>
@@ -16,9 +16,11 @@
                 <td>{{course.title}}</td>
                  <td>{{course.location}}</td>
                  <td>{{course.dateOfCourse|date: "dd/MM/yyyy"}}</td>
-               <td><button type="button" class="btn btn-outline-primary">Book a Place</button></td>
+               <td><button type="button" class="btn btn-outline-primary" (click)="change(course)">Book a Place</button></td>
                </tr>
         </tbody>
       </table>
     </table>
   </div>
+
+  <map-course-details *ngIf="showInfo"></map-course-details>
