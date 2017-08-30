@@ -11,9 +11,9 @@ import { Course } from '../course';
 export class CourseListComponent implements OnInit {
 
   course: Course;
-
-  constructor() { }
-
+  //data: DataService;
+  constructor(/*dataService: DataService*/) { /*this.data = dataService;*/ }
+  
   ngOnInit() {
   }
 
