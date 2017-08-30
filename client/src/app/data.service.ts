@@ -22,7 +22,7 @@ export class DataService {
     const options = {
       headers: new HttpHeaders().set('Content-Type', 'application/json'),
     };
-    this.http.post("/api/add-course-employee/", bookDetails, options);
+    this.http.post("/api/add-course-employee", bookDetails, options).subscribe();
   }
 
   alertFunction(): void

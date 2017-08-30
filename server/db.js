@@ -23,14 +23,11 @@ exports.getAllCourses = function (courseID, callback){
         });
 };
 
-exports.insertCourseEmployee = function(firstName, lastName,email, courseID, callback){
+exports.insertCourseEmployee = function(firstName, lastName,email, courseID){
+    console.log('In Insert course employee query method');
     db.query(
-        "INSERT INTO CourseEmployee(firstName, lastName, email,courseID)" +
-        "VALUES ?,?,?,? "
-        [firstName, lastName, email,courseID],
-        function(err){
-            if(err) throw err;
-            callback("Employee Book Course Successful.");
-        }
+        "INSERT INTO CourseEmployee (firstName, lastName, email, courseID) " +
+        "VALUES (?,?,?,?) ",
+        [firstName, lastName, email, courseID]
     );
 };
