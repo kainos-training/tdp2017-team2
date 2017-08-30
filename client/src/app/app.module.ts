@@ -1,18 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {BookCourseComponent} from './book-course/book-course.component';
 import { AppComponent } from './app.component';
-import { CourseListComponent } from '../app/course-list/course-list.component';
+import { FormsModule } from '@angular/forms';
+import { SwitchboardService } from './switchboard.service';
+import { DataService } from './data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CourseListComponent
+    BookCourseComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataService, SwitchboardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

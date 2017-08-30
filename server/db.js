@@ -25,7 +25,7 @@ exports.getAllCourses = function (courseID, callback){
 
 exports.insertCourseEmployee = function(firstName, lastName,email, courseID, callback){
     db.query(
-        "INSERT INTO courseEmployee(firstName, lastName, email,courseID)" +
+        "INSERT INTO CourseEmployee(firstName, lastName, email,courseID)" +
         "VALUES ?,?,?,? "
         [firstName, lastName, email,courseID],
         function(err){

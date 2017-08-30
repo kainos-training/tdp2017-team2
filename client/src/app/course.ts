@@ -1,5 +1,5 @@
-export class Course {
-    title: string;
-    dateOfCourse: string;
-    location: string;
+export interface Course {
+    title ?: string;
+    dateOfCourse ?: string;
+    location ?: string;
 }

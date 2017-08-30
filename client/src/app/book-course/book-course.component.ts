@@ -1,22 +1,42 @@
-import { Component, OnInit } from '@angular/core';
-//import {SwitchboardService } from '../switchboard.service';
-//import { Subscription } from "rxjs/Subscription";
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import {SwitchboardService } from '../switchboard.service';
+import { Subscription } from "rxjs/Subscription";
 import {Employee} from '../employee';
+import {Course} from '../course';
+import {DataService} from '../data.service';
 
 @Component({
   selector: 'map-book-course',
   templateUrl: './book-course.component.html',
   styleUrls: ['./book-course.component.css']
 })
-export class BookCourseComponent implements OnInit {
+export class BookCourseComponent implements OnInit, OnDestroy{
 
-  constructor() { }
+  switchboard: SwitchboardService;
+  subCourse : Subscription;
+  //@Input() course : Course;
+  attendee : Employee ={};
+  data: DataService;
 
-  ngOnInit() {
+  constructor(dataService: DataService) {
+  	this.data = dataService;
   }
 
-  onSave(newEmployee: Employee): void {
-    //this.switchboard.updateCity(newCity);
+  ngOnInit(): void {
+    //need to subscribe to course variable
+/*     this.subCourse = this.switchboard.course$.subscribe((c) => {
+      this.course = c;
+    }); */
+
+    
+  }
+
+  onSave(): void {
+    this.data.BookCourse(this.attendee, 1);
+  }
+
+  ngOnDestroy(): void {
+    //this.subCourse.unsubscribe();
   }
 
 }

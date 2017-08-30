@@ -1,11 +1,12 @@
 const express = require ('express');
-const app = express();
 const db = require('./db.js');
-var bodyParser = require('body-parser');
+const app = express();
 
-app.use(bodyParser.json);
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
 
 app.get('/get-course-list', function (req, res) {
+	console.log('In get Course list');
 	  db.getAllCourses(req.body, function (rows){
 		  console.log('Getting list of all courses');
 		  res.send(rows);
@@ -13,6 +14,7 @@ app.get('/get-course-list', function (req, res) {
   });
 
 app.post('/add-course-employee', function(req,res){
+	console.log('In add course employee');
     const firstName = req.body.firstName;
 	const lastName = req.body.lastName;
 	const email = req.body.email;
@@ -20,7 +22,7 @@ app.post('/add-course-employee', function(req,res){
 
 	if(firstName && lastName && email && courseID){
         db.insertCourseEmployee(firstName,lastName,email,courseID,function(messsage){
-			Console.log('Booking employee on course');
+			console.log('Booking employee on course');
 			res.send(message);
         });
     }
