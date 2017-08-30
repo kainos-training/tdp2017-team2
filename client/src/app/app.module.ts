@@ -4,10 +4,13 @@ import { DataService } from './data.service';
 import { AppComponent } from './app.component';
 import { CourseListComponent } from '../app/course-list/course-list.component';
 import { HttpClientModule } from "@angular/common/http";
+import { CourseDetailsComponent } from '../app/course-details/course-details.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    CourseListComponent
+    CourseListComponent,
+    CourseDetailsComponent
   ],
   imports: [
     BrowserModule,
