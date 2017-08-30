@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 //import {SwitchboardService } from '../switchboard.service';
 //import { Subscription } from "rxjs/Subscription";
+import {Employee} from '../employee';
 
 @Component({
   selector: 'map-book-course',
@@ -14,8 +15,8 @@ export class BookCourseComponent implements OnInit {
   ngOnInit() {
   }
 
- /* onSave(newEmployee: Employee): void {
-    this.switchboard.updateCity(newCity);
-  }*/
+  onSave(newEmployee: Employee): void {
+    //this.switchboard.updateCity(newCity);
+  }
 
 }
